@@ -1,0 +1,142 @@
+.code-runner {
+    border-top: 2px solid #3e3e42;
+    background: #252526;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.runner-header {
+    padding: 0.75rem 1rem;
+    background: #2d2d30;
+    border-bottom: 1px solid #3e3e42;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.runner-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #d4d4d4;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.runner-icon {
+    font-size: 1rem;
+}
+
+.runner-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.run-button,
+.clear-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.run-button {
+    background: #4ade80;
+    color: #1e1e1e;
+}
+
+.run-button:hover:not(:disabled) {
+    background: #22c55e;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+}
+
+.run-button:disabled {
+    background: #3e3e42;
+    color: #858585;
+    cursor: not-allowed;
+}
+
+.clear-button {
+    background: white;
+    color: #333;
+}
+
+.clear-button:hover:not(:disabled) {
+    background: #f0f0f0;
+}
+
+.clear-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.spinner-small {
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #1e1e1e;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.runner-output {
+    flex: 1;
+    overflow: auto;
+    padding: 1rem;
+    color: #d4d4d4;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.runner-output pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.runner-output.error pre {
+    color: #f87171;
+}
+
+.output-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #858585;
+    text-align: center;
+}
+
+.output-placeholder p {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.output-placeholder small {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.runner-error {
+    padding: 0.75rem 1rem;
+    background: #4433;
+    color: #f87171;
+    border-top: 1px solid #f87171;
+    font-size: 0.85rem;
+}
